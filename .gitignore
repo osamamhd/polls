@@ -1,2 +1,3 @@
 db.sqlite3
 theme/static/css/styles.css
+theme/static/js/jquery.js
