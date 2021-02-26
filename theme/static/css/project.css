@@ -1,0 +1,11 @@
+input#id_username {
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+
+input#id_password {
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
