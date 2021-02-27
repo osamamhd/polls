@@ -1,6 +1,8 @@
 from django.contrib.auth import views
 from  django.urls import path
 from users.forms import UserLoginForm
+from users.views import signup_view
+
 urlpatterns = [
 
     path(
@@ -10,6 +12,12 @@ urlpatterns = [
             authentication_form=UserLoginForm
             ),
         name='login'
+    ),
+
+    path(
+        'signup/',
+        signup_view,
+        name='signup'
     ),
     
 ]
