@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     # Django Tailwind 
     'tailwind',
     'theme',
+
+    # Local Apps
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
