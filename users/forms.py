@@ -14,5 +14,4 @@ class UserLoginForm(AuthenticationForm):
             'class': 'form-control',
             'placeholder': '',
             'id': 'hi',
-        }
-))
+        }))
