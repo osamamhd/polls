@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load tailwind_filters %}
+{% load crispy_forms_tags %}
 
 {% block title %}Home{% endblock title %}
 
@@ -87,13 +89,12 @@
         <div class="col-span-1 pt-3 md:pt-5"><hr></div>
     </div>
     <div class="grid grid-cols-1">
-        <div class="col-span-1 flex justify-center px-10 md:px-60">
-            <p class="text-gray-700 text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
-                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-                 a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
-                 remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
-                 Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions 
-                 of Lorem Ipsum.</p>
+        <div class="col-span-1 flex justify-center mt-3 px-10 md:px-60">
+            <form class="w-96  text-gray-700" id = "contactForm" method= "POST">{% csrf_token %}
+                {{ contactForm|crispy }}
+                <input type="submit" name="contact-submit" class="bg-purple-200 rounded-lg py-3 px-8
+                hover:bg-purple-300 flex justify-center my-4" />
+            </form>
         </div>
     </div>
 
@@ -101,7 +102,26 @@
     <footer class="bg-gradient-to-t from-indigo-500 to-blue-400 p-5 mt-10">
         <p class="text-gray-200 text-sm md:text-base font-thin flex justify-center">Created By Osama Arabi - &copy;2021</p>
     </footer>
-    
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+           $("#contactForm").submit(function(e){        
+                  e.preventDefault();
+                  var serializedData = $(this).serialize();
+                  $.ajax({
+                      type : 'POST',
+                      url :  "{% url 'contact_submit' %}",
+                      data : serializedData,
+                      success : function(response){
+                          $("#contactForm")[0].reset(); 
+                      },
+                      error : function(response){
+                          console.log(response)
+                      }
+                  });
+           });
+        });
+    </script>
 </div>
 
 {% endblock content %}
