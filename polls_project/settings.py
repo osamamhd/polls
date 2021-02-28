@@ -42,10 +42,17 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
 
+    # 3rd party
+    'crispy_forms',
+    'crispy_tailwind',
     # Local Apps
     'users.apps.UsersConfig',
     'contact.apps.ContactConfig',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+
+CRISPY_TEMPLATE_PACK = "tailwind"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
