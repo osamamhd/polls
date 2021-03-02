@@ -4,22 +4,22 @@
 {% block content %}
 <div class="bg-gradient-to-t from-blue-400 to-indigo-500 h-screen">
     <div class="flex justify-center">
-        <form class="border-2 rounded-lg mt-40 md:mt-60 p-10" method="post">
+        <form class="border-2 rounded-lg mt-28 md:mt-60 p-10" method="post">
         {% csrf_token %}
         {{ form.non_field_errors }}
-            <div class="form-group">
-                <label class="text-base text-white" for="{{ form.username.id_for_label }}">Username:</label>
+            <div class="form-group py-2">
+                <label class="text-base text-white  py-2" for="{{ form.username.id_for_label }}">Username:</label>
                 {{ form.username }}
             </div>
-            <div class="form-group text-base p-2">
+            <div class="form-group text-base pl-1 py-2">
                 <label class="text-white" for="{{ form.password1.id_for_label }}">Password:</label>
                 {{ form.password1 }}
             </div>
-            <div class="form-group text-base p-2">
+            <div class="form-group text-base pl-1 py-2">
                 <label class="text-white" for="{{ form.password2.id_for_label }}">Password:</label>
                 {{ form.password2 }}
             </div>
-            <button class="bg-indigo-600 hover:bg-purple-700 text-white font-light py-2 px-6 md:ml-56 rounded-lg focus:outline-none focus:shadow-outline" type="submit">Sign up</button>
+            <button class="bg-indigo-600 hover:bg-purple-700 text-white font-light py-2 px-6 md:ml-44 mt-4 rounded-lg focus:outline-none focus:shadow-outline" type="submit">Sign up</button>
         </form>
     </div>
 </div>
