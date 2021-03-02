@@ -39,7 +39,30 @@
             <img class="object-scale-down w-40 md:w-60"
             src="{%static 'img/brand.png'%}" alt="brand-image">
         </div>
-        
+        {% if user.is_authenticated %}
+        <div class="col-span-4 md:col-span-1 ">
+            <div>
+                <div id="click" class="bg-purple-200 rounded-lg py-3 px-10 opacity-50
+                            hover:bg-purple-300 flex justify-center my-8">
+                <a href="#" class="text-gray-900 uppercase cursor-pointer">New Poll</a>
+                </div>
+            </div>
+            <div>
+                <div class="bg-purple-200 rounded-lg py-3 px-10 opacity-50
+                            hover:bg-purple-300 flex justify-center my-4">
+                <a href="#" class="text-gray-900 uppercase">Browse polls</a>
+                </div>
+                <div>
+                    <p class="text-xs md:mt-5 font-thin text-gray-200">
+                        <svg class="w-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                        Very Simple Polling App - Built with #Django
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% else %}
         <div class="col-span-4 md:col-span-1 ">
             <div>
                 <div id="click" class="bg-purple-200 rounded-lg py-3 px-10 opacity-50
@@ -62,6 +85,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
     </div>
 </div>
 

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+			
+
+    <ul class="p-20 text-red-400">
+    {% for question in object_list %}
+        <li><a href="#">{{ question }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock content %}
