@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('django.contrib.auth.urls')),
     path('users/', include('users.urls')),
+    path('polls/', include('main.urls')),
     path('', views.ContactAjax.as_view(), name = 'contact_submit'),
     path('', TemplateView.as_view(template_name='index.html'), name='home'),
 ]
