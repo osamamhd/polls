@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # Local Apps
     'users.apps.UsersConfig',
     'contact.apps.ContactConfig',
+    'main.apps.MainConfig',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
