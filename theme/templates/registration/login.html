@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load tailwind_filters %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -7,17 +9,7 @@
     <div class="flex justify-center">
         <form class="border-2 rounded-lg mt-40 md:mt-60 p-10" method="post">
             {% csrf_token %}
-            {{ form.non_field_errors }}
-            <div class="form-group text-base py-3">
-                <label class="text-base text-white" for="{{ form.username.id_for_label }}">Username:</label>
-                {{ form.username }}
-                {{ form.username.errors }}
-            </div>
-            <div class="form-group text-base py-3 pl-1">
-                <label class="text-base text-white" for="{{ form.password.id_for_label }}">Password:</label>
-                {{ form.password }}
-                {{ form.password.errors }}
-            </div>
+            {{ form|crispy}}
             <button class="bg-indigo-600 hover:bg-purple-700 text-white font-light mt-2 py-2 px-6 md:ml-48 rounded-lg focus:outline-none focus:shadow-outline" type="submit">Login</button>
         </form>
     </div>
